@@ -1,0 +1,10 @@
+ASSETS:E:/houdini_pip/Project/a/Assets
+PRJ:E:/houdini_pip/Project/a
+EPISODES:E:/houdini_pip/Project/a/Episodes/water
+OUT:E:/houdini_pip/Project/a/Episodes/water/0020/Result
+SRC:E:/houdini_pip/Project/a/Episodes/water/0020/Materials
+DATA:E:/houdini_pip/Project/a/Episodes/water/0020/Data
+SHOT:E:/houdini_pip/Project/a/Episodes/water/0020
+SHOTNAME:0020
+JOB:E:/houdini_pip/Project/a/Episodes/water/0020/work/Fx/rigidBody
+CACHE:E:/houdini_pip/Project/a/Episodes/water/0020/Result/Fx/rigidBody/cache

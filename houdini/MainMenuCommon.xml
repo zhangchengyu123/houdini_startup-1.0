@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<mainMenu>
+  <menuBar>
+    <!-- ======================== File Menu ============================== -->
+    <subMenu id="landy_menu">
+    <label>Landy</label>
+
+      <scriptItem id="h.incrementHip">
+        <label>Save scene </label>
+        <scriptCode><![CDATA[
+import increment
+reload(increment)
+increment.incrementHip()]]>	
+   </scriptCode>	
+      </scriptItem>
+      <separatorItem/>
+
+      <subMenu id="animation_menu">
+    <label>Channels and Keyframes</label>
+
+      <scriptItem id="set_keyframe_alias">
+    <label>set_keyframe</label>
+      </scriptItem>
+
+      <scriptItem id="h.mypref">
+       <label>My Preference</label>
+      <insertBefore>set_keyframe_alias</insertBefore>
+      </scriptItem>
+        <separatorItem/>
+      <actionItem id="bbbbbb">
+        <label>Neww</label>
+      </actionItem>
+
+        
+    </subMenu>
+    <subMenu id="mySubMenuId">
+    <label>Colors</label>
+    <scriptMenuStripDynamic id="myUniqueDynamicStripId">
+        <contentsScriptCode><![CDATA[
+        menu_items = ["red", "The Color Red", "green", "The Color Green", "blue", "The Color Blue"]
+        return menu_items
+        ]]></contentsScriptCode>
+        <scriptCode><![CDATA[
+import hou
+selected_token = kwargs["selectedtoken"]
+selected_label = kwargs["selectedlabel"]
+
+hou.ui.displayMessage("You have selected %s (%s)." % (selected_label, selected_token))
+        ]]></scriptCode>
+    </scriptMenuStripDynamic>
+</subMenu>
+
+
+    </subMenu>
+
+
+  </menuBar>
+</mainMenu> 
+
+
+

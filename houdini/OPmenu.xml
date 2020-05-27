@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menuDocument>
+   <menuBar>
+    <separatorItem/>	
+	<scriptItem id="updatahda">
+	    <label>quick update hda to next version</label>
+	    <context>
+		<expression><![CDATA[
+node = kwargs["node"]
+
+if node.matchesCurrentDefinition():
+    return False
+
+if not node.isNetwork():
+    return False
+
+hda_def = node.type().definition()
+
+if not hda_def:
+    return False
+    
+options = hda_def.options()
+
+if not options.lockContents():
+    return False
+
+if node.isInsideLockedHDA() and not node.isEditableInsideLockedHDA():
+    return False
+
+if hou.hda.safeguardHDAs():
+    return False
+
+if not node.type().isWritable():
+    return False
+
+if not node.type().areContentsViewable():
+    return False
+
+return True
+]]></expression>	
+   </context>
+   <scriptCode><![CDATA[
+import updatehda
+reload(updatehda)
+updatehda.updateHda()
+]]>
+ </scriptCode>
+ </scriptItem>
+
+
+ <scriptItem id="savehda">
+	    <label>savehda</label>
+	    <context>
+		<expression><![CDATA[
+node = kwargs["node"]
+
+if node.matchesCurrentDefinition():
+    return False
+
+if not node.isNetwork():
+    return False
+
+hda_def = node.type().definition()
+
+if not hda_def:
+    return False
+    
+options = hda_def.options()
+
+if not options.lockContents():
+    return False
+
+if node.isInsideLockedHDA() and not node.isEditableInsideLockedHDA():
+    return False
+
+if hou.hda.safeguardHDAs():
+    return False
+
+if not node.type().isWritable():
+    return False
+
+if not node.type().areContentsViewable():
+    return False
+
+return True
+]]></expression>	
+   </context>
+   <scriptCode><![CDATA[
+import updatehda
+reload(updatehda)
+updatehda.savehda()
+]]>
+ 	</scriptCode>
+ 	</scriptItem>
+
+
+
+ </menuBar>
+</menuDocument>
